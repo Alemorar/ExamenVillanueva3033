@@ -18,7 +18,7 @@ public class Pedido {
     private int numeroMesa;
     private String mozo;
     private Date fecha;
-    private final ArrayList<DetallePedido> detalle;
+    private ArrayList<DetallePedido> detalle;
 
     public Pedido() {
         detalle = new ArrayList<DetallePedido>();
@@ -80,6 +80,7 @@ public class Pedido {
         for (DetallePedido dp:detalle){
             salida = salida + dp.toString();
         }
+        salida = salida + "\n\t\t\t\t\t----------------";
         salida = salida + "\n\t\t\t\t\tTotal:\t" + calcularTotal();
         return salida;
     }
