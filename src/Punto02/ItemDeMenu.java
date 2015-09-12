@@ -50,4 +50,8 @@ public class ItemDeMenu {
         this.precio = precio;
     }
     
+    @Override
+    public String toString(){
+        return "\n" + idItem + "\t" + nombre + "\t" + descripcion + "\t" + precio;
+    }
 }

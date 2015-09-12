@@ -55,8 +55,8 @@ public class DetallePedido {
     }
     
     @Override
-    public String toString() {
-        return "\n" + unItem.getIdItem() + "\t" + unItem.getNombre() + "\t\t" + precioUnitario + "\t" + cantidad + "\t\t" + calcularSubtotal();
+    public String toString(){
+        return "\n" + unItem.getIdItem() + "\t" + unItem.getNombre() + "\t" + unItem.getDescripcion() + "\t" + precioUnitario + "\t" + cantidad + "\t" + calcularSubtotal();
     }
     
 }

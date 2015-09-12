@@ -21,7 +21,7 @@ public class Pedido {
     private final ArrayList<DetallePedido> detalle;
 
     public Pedido() {
-        detalle = new ArrayList<>();
+        detalle = new ArrayList<DetallePedido>();
     }
     
     public void agregarDetalle(DetallePedido dp){
@@ -71,15 +71,16 @@ public class Pedido {
     @Override
     public String toString() {
         String salida = "";
-        salida = "\nNumero Factura: " + idPedido + "\n";
+        salida = "\nNumero Pedido: " + idPedido;
+        salida = salida + "\nNº de Mesa: " + numeroMesa;
+        salida = salida + "\nMozo: " + mozo;
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy h:mm:ss");
-        salida = salida + "Fecha: " + sdf.format(fecha) + "\n";
-        salida = salida + "\nCodigo" + "\tDescripcion" + "\tPrecio" + "\tCantidad" + "\tSubTotal";
+        salida = salida + "\nFecha: " + sdf.format(fecha) + "\n";
+        salida = salida + "\nidItem" + "\tNombre" + "\tDescripcion" + "\tPrecio" + "\tCant." + "\tSubTotal";
         for (DetallePedido dp:detalle){
             salida = salida + dp.toString();
         }
-        salida = salida + "\n\nTotal:\t\t\t\t\t\t" + calcularTotal();
+        salida = salida + "\n\t\t\t\t\tTotal:\t" + calcularTotal();
         return salida;
     }
-    
 }
